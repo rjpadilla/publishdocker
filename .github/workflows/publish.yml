@@ -34,9 +34,7 @@ jobs:
         run: |
           docker manifest create ghcr.io/rjpadilla/hello:latest ghcr.io/rjpadilla/hello:amd64 ghcr.io/rjpadilla/hello:arm ghcr.io/rjpadilla/hello:arm64
           docker manifest inspect ghcr.io/rjpadilla/hello:latest
-          docker manifest annotate --arch "amd64" ghcr.io/rjpadilla/hello:latest ghcr.io/rjpadilla/hello:amd64
-          docker manifest annotate --arch "arm" ghcr.io/rjpadilla/hello:latest ghcr.io/rjpadilla/hello:arm
-          docker manifest annotate --arch "arm64" ghcr.io/rjpadilla/hello:latest ghcr.io/rjpadilla/hello:arm64
+          docker manifest annotate ghcr.io/rjpadilla/hello:latest ghcr.io/rjpadilla/hello:arm --arch arm 
           docker manifest inspect ghcr.io/rjpadilla/hello:latest
           docker manifest push ghcr.io/rjpadilla/hello:latest
 
