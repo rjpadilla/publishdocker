@@ -21,7 +21,7 @@ jobs:
         run: |
           export DOCKER_CLI_EXPERIMENTAL=enabled
           docker run --privileged --rm docker/binfmt:a7996909642ee92942dcd6cff44b9b95f08dad64
-          docker buildx build --platform ${{ matrix.arch }} -t ghcr.io/rjpadilla/hello:${{ matrix.arch }} .
+          docker buildx build --platform ${{ matrix.arch }} -t ghcr.io/rjpadilla/hello:${{ matrix.arch }} . --build-arg ARCH=${{ matrix.arch }}
           docker push ghcr.io/rjpadilla/hello:${{ matrix.arch }}
   
   build-and-push-manifest:
