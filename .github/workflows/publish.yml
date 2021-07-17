@@ -1,6 +1,9 @@
 name: publish
 
-on: [push]
+on: 
+  push:
+    branch:
+      - master
 
 jobs:
   build-and-push-image:
