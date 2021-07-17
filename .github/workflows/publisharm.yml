@@ -34,7 +34,7 @@ jobs:
         run: |
           docker manifest create ghcr.io/rjpadilla/hello:latest ghcr.io/rjpadilla/hello:arm 
           docker manifest inspect ghcr.io/rjpadilla/hello:latest
-          docker manifest annotate ghcr.io/rjpadilla/hello:latest ghcr.io/rjpadilla/hello:arm --os linux --arch arm 
+          docker manifest annotate ghcr.io/rjpadilla/hello:latest ghcr.io/rjpadilla/hello:arm --arch arm 
           docker manifest inspect ghcr.io/rjpadilla/hello:latest
           docker manifest push ghcr.io/rjpadilla/hello:latest
 
