@@ -24,7 +24,7 @@ jobs:
           case ${{ matrix.arch }} in
             amd64) : "amd64" ;;
             arm) : "arm32v6" ;;
-            arm64) : "=arm64v8" ;;
+            arm64) : "arm64v8" ;;
           esac
           arch="$_"
           docker build  -t ghcr.io/rjpadilla/hello:${{ matrix.arch }} --build-arg ARCH=$arch . 
