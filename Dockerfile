@@ -1,5 +1,4 @@
-ARG ARCH=
-FROM ${ARCH}busybox
+FROM busybox
 
 CMD echo "I am a container."
 
