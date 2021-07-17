@@ -22,10 +22,11 @@ jobs:
           export DOCKER_CLI_EXPERIMENTAL=enabled
           # docker run --privileged --rm docker/binfmt:a7996909642ee92942dcd6cff44b9b95f08dad64
           case ${{ matrix.arch }} in
-            amd64) arch=amd64 ;;
-            arm) arch=arm32v6 ;;
-            arm64) arch=arm64v8 ;;
+            amd64) : "amd64" ;;
+            arm) : "arm32v6" ;;
+            arm64) : "=arm64v8" ;;
           esac
+          arch="$_"
           docker build  -t ghcr.io/rjpadilla/hello:${{ matrix.arch }} --build-arg ARCH=arch . 
           docker push ghcr.io/rjpadilla/hello:${{ matrix.arch }}
   
