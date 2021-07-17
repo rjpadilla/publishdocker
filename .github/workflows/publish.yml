@@ -15,5 +15,5 @@ jobs:
       
       - name: Build docker image
         run: |
-          docker build -t hello .
-          docker push rjpadilla/hello:latest
+          docker build -t ghcr.io/rjpadilla/hello:latest .
+          docker push ghcr.io/rjpadilla/hello:latest
