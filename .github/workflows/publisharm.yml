@@ -24,19 +24,12 @@ jobs:
           #docker run --privileged --rm docker/binfmt:a7996909642ee92942dcd6cff44b9b95f08dad64
           docker build -t ghcr.io/rjpadilla/hello:arm . 
           docker push ghcr.io/rjpadilla/hello:arm
-  
-  build-and-push-manifest:
-    needs: build-and-push-image
-    runs-on: ubuntu-latest
-    steps:
-      - name: Log in to the Container registry
-        run: docker login ghcr.io -u ${{ github.actor }} -p ${{ secrets.GITHUB_TOKEN }}
-      - name: Deploying manifest to Github Packages
-        run: |
+
           docker manifest create ghcr.io/rjpadilla/hello:latest ghcr.io/rjpadilla/hello:arm 
           docker manifest inspect ghcr.io/rjpadilla/hello:latest
           docker manifest annotate ghcr.io/rjpadilla/hello:latest ghcr.io/rjpadilla/hello:arm --arch arm 
           docker manifest inspect ghcr.io/rjpadilla/hello:latest
           docker manifest push ghcr.io/rjpadilla/hello:latest
+  
 
       
