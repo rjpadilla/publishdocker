@@ -1,6 +1,5 @@
 
-FROM arm32v6/busybox
-ENV QEMU_CPU=arm1176
+FROM arm32v6/alpine:3.13
 
 CMD echo "I am a container."
 
