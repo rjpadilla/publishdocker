@@ -1,4 +1,5 @@
-FROM busybox
+ARG ARCH=
+FROM ${ARCH}/alpine
 
 CMD echo "I am a container."
 
