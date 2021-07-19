@@ -27,7 +27,7 @@ jobs:
             arm64) : "arm64v8" ;;
           esac
           arch="$_"
-          docker build  -t ghcr.io/rjpadilla/hello:${{ matrix.arch }} --build-arg ARCH=$arch . 
+          docker buildx build -t ghcr.io/rjpadilla/hello:${{ matrix.arch }} --build-arg ARCH=$arch . 
           docker push ghcr.io/rjpadilla/hello:${{ matrix.arch }}
           # docker build  -t rjpadilla/hello:${{ matrix.arch }} --build-arg ARCH=$arch . 
           # docker push rjpadilla/hello:${{ matrix.arch }}
