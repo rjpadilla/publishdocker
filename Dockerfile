@@ -14,4 +14,4 @@ EXPOSE 80 443
 
 CMD ["nginx", "-g", "daemon off;"]
 
-LABEL org.opencontainers.image.source="https://github.com/rjpadilla/publishdocker"
+#LABEL org.opencontainers.image.source="https://github.com/rjpadilla/publishdocker"
